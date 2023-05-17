@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-padrao">
+        <div class="flex h-screen w-full justify-between flex-col md:flex-row">
+            <div class="flex justify-center items-center w-full animation_scroll lg:w-1/2">
+                <img src="../imagens/logo_integro.png" class="scale-75 sm:scale-85">
+            </div>
+            <div class="flex justify-center items-center w-full lg:w-1/2">
+                <div class="flex flex-col justify-between p-5 md:p-0 md:pr-10">
+                    <div class="text-titulo text-[18px] md:text-[28px]">Introdução</div>
+                    <div class="text-white font-bold text-[28px] md:text-[48px]">Bem-vindo ao</div>
+                    <div class="text-white font-bold text-[28px] md:text-[48px]">treinamento online!</div>
+                    <div class="text-white mt-5 text-[14px] md:text-[18px]">Que bom ter você aqui!</div>
+                    <div class="text-white mt-5 text-[14px] md:text-[18px]">Este é o nosso treinamento online sobre o Canal de Denúncias/Ética da Organização.</div>
+                    <div class="text-white mt-5 text-[14px] md:text-[18px]">O conteúdo exposto neste treinamento não representa integralmente os conceitos relacionados a um Canal de Denúncias. Portanto, é recomendável que você navegue pelo site do Canal e consulte o Código de Conduta. Isso lhe ajudará a ter um melhor aproveitamento e a colaborar para a manutenção de um ambiente empresarial alicerçado na integridade, na ética nos negócios e em relações respeitosas com colegas e terceiros.</div>
+                    <div class="text-white mt-5 font-bold text-[14px] md:text-[18px]">Bom curso! </div>
+                    <div class="justify-self-end self-end w-10 mt-10 animate-pulse cursor-pointer mb-10 md:mb-0 md:w-12"><img src='../imagens/continuar.png' onclick=proximo()></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const proximo = () => {
+                document.location.href = 'ead_003.html';
+            }
+        </script>
+    </body>
+</html>

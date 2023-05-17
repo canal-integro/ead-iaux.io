@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">      
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex w-full flex-col md:flex-row">
+
+                <div class="flex justify-center flex-col w-full md:w-[300px] p-8 border-r border-r-separacao h-full">
+                    <div class="text-padrao text-[20px] md:text-[30px] font-bold">3. O que denunciar?</div>
+                    <div class="text-padrao mt-10 text-[13px] md:text-[15px]">Toda a suspeita ou ação concreta de um colaborador ou grupo de colaboradores que viole as regras e os valores da instituição, representados no Código de Conduta, bem como leis e regulamentos em vigor.</div>
+                </div>
+
+                <div class="flex flex-col w-full justify-between items-center" style="padding-bottom: 120px;">
+                    <div class="w-4/5 md:w-4/5 md:mt-10">
+                        <div class="flex flex-col bg-padrao rounded drop-shadow-md p-6 items-center">
+                            <div class="text-white font-bold">
+                                Agora vamos entender o que deve ser denunciado no Canal para evitar registrar algo que não faça parte de seu escopo.
+                            </div>
+                            <div class="text-white italic text-[12px]">
+                                Clique sobre cada um dos itens abaixo.
+                            </div>
+
+                            <div class="flex flex-col justify-between items-center w-full md:w-4/5 mt-10">
+                                <div class="flex flex-col md:flex-row justify-between w-full items-center">
+                                    <div id="opcao_1" class="flex justify-center items-center w-full md:w-40 xl:w-60 bg-gray-400 animate-pulse rounded h-12 drop-shadow-md cursor-pointer" onclick="leitura(1)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_1" class="mr-2">Assédio moral</div>
+                                            <img id="img_opcao_1" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_2" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(2)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_2" class="mr-2">Assédio sexual</div>
+                                            <img id="img_opcao_2" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_3" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(3)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_3" class="mr-2">Conduta inadequada</div>
+                                            <img id="img_opcao_3" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_4" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md bg-gray-400" onclick="leitura(4)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_4" class="mr-2">Conflito de interesses</div>
+                                            <img id="img_opcao_4" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col md:flex-row justify-between w-full items-center mt-2">
+                                    <div id="opcao_5" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(5)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_5" class="mr-2">Corrupção</div>
+                                            <img id="img_opcao_5" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_6" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(6)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_6" class="mr-2">Discriminação / Preconceito</div>
+                                            <img id="img_opcao_6" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>           
+                                    <div id="opcao_7" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md bg-gray-400" onclick="leitura(7)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_7" class="mr-2">Fraude</div>
+                                            <img id="img_opcao_7" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_8" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(8)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_8" class="mr-2">Furto / Roubo</div>
+                                            <img id="img_opcao_8" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col md:flex-row justify-between w-full items-center mt-2">
+                                    <div id="opcao_9" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(9)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_9" class="mr-2">Quebra de sigilo de informações / dados</div>
+                                            <img id="img_opcao_9" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>  
+                                    <div id="opcao_10" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md bg-gray-400" onclick="leitura(10)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_10" class="mr-2">Uso indevido de recursos da empresa</div>
+                                            <img id="img_opcao_10" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_11" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(11)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_11" class="mr-2">Violação de leis e normas em vigor</div>
+                                            <img id="img_opcao_11" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 mt-2 md:mt-0"></div>                                    
+                                </div>  
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row bg-white mt-5 rounded p-5 drop-shadow-md items-center mb-48">
+                           
+
+                            <div id="texto" class="flex flex-col invisible w-full">
+                                <img id="mensagem_imagem" src="../imagens/detetive.png" class="w-24 h-24 mr-0 md:mr-3 invisible self-start">
+                        
+                                <div id="mensagem_titulo" class="font-bold text-padrao text-[15px] md:text-[20px]">
+                                    Desconfiança?
+                                </div>
+                                <div id="mensagem_texto" class="text-padrao text-[15px] md:text-[20px]">
+                                    Se uma organização está desconfiada de que alguém tem comportamentos que não estão alinhados com o seu Código de Conduta ou com leis e regulamentos em vigor, ela deve procurar mecanismos para confirmar ou não estas atitudes, como, por exemplo, uma auditoria. Implementar um Canal para toda a instituição em razão de desconfiança, <b>não</b> é uma razão adequada até mesmo em razão dos custos que isto implica.
+                                </div>
+                    <!--moral-->
+                                <div class="hidden flex-col md:flex-row items-center" id="video_assedio_moral" style="display: grid;grid-template-columns: 1fr 1fr;">
+                                    <div class="relative bg-monitor bg-cover bg-no-repeat w-[100px] md:w-[300px] h-[30px] md:h-[200px] lg:w-[660px] lg:h-[470px] mr-0 md:mr-3">
+                                        <div id="player" class="relative w-[74px] md:w-[249px] lg:w-[581px] h-[2px] md:h-[134px] lg:h-[330px] top-[14px] md:top-[22px] lg:top-[29px] left-[18px] md:left-[31px] lg:left-[41px]"></div>
+                                
+                                
+                                        <div id="tela" style="padding: 45px; display: flex; align-items: flex-start;">
+                                            <!-- imagem -->
+                                            <img id="monitor_imagem_m" src="../imagens/assedio_moral.png" class="w-24 h-24 mr-0 md:mr-3 self-start">                                       
+                                            <!-- textos -->
+                                            <div id="monitorcamo_campo_texto" class="flex flex-col">
+                                              <div id="monitor_titulo_m" class="font-bold text-padrao text-[15px] md:text-[20px]">
+                                                Assédio moral
+                                              </div>
+                                              <div id="monitor_texto_m" class="text-padrao text-[15px] md:text-[20px]">
+                                                Conduta abusiva, a exemplo de gestos, palavras e atitudes que SE REPITA COM FREQUÊNCIA E DE FORMA SISTEMÁTICA, 
+                                                atingindo a dignidade ou integridade psíquica ou física de um colaborador.
+                                              </div>
+                                            </div>
+                                            <!-- textos -->
+                                          </div>
+                                        <!--botoes-->
+                                        <div id="btnNextMessageLeft" style="position: absolute; top: 370px; left: 60px;display: none;" >
+                                            <i class="bi bi-arrow-left botao_direcao_computador" onclick="nextPageAssedio(0)" style="height: 45px; animation: fadein 750ms infinite;background-color: hwb(210 40% 59%);"></i>
+                                        </div>
+                                        <div id="btnNextMessageRight" style="position: absolute; top: 370px; right: 60px;">
+                                            <i class="bi bi-arrow-right botao_direcao_computador" onclick="nextPageAssedio(1)" style="height: 45px; animation: fadein 750ms infinite;background-color: hwb(210 40% 59%);"></i>
+                                        </div>
+                                          <!--botoes-->
+                                       
+                                    </div>
+    
+                                    <!-- <span id="div_info_play">
+                                        <div class="flex flex-col w-[170px] items-center md:items-start">
+                                            <div class="text-[13px]">Clique sobre o ícone abaixo ou sobre a tela ao lado para assistir ao vídeo</div>
+                                            <div class="text-[13px] font-bold">“Assédio Moral”</div>
+                                            <div><img src="../imagens/5.png" class="w-20 md:w-28 cursor-pointer" onclick="onPlay()"></div>
+                                        </div>
+                                    </span> -->
+                                </div>
+                        <!--sexual-->
+                        <div class="hidden flex-col md:flex-row items-center" id="video_assedio_sexual" style="display: none;grid-template-columns: 1fr 1fr;">
+                            <div class="relative bg-monitor bg-cover bg-no-repeat w-[100px] md:w-[300px] h-[30px] md:h-[200px] lg:w-[660px] lg:h-[470px] mr-0 md:mr-3">
+                                <div id="player_s" class="relative w-[74px] md:w-[249px] lg:w-[581px] h-[2px] md:h-[134px] lg:h-[330px] top-[14px] md:top-[22px] lg:top-[29px] left-[18px] md:left-[31px] lg:left-[41px]">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/M_nGxBoVEeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+
+
+                                <div id="tela_s" style="padding: 45px; display: flex; align-items: flex-start;">
+                                    <!-- imagem -->
+                                    <img id="monitor_imagem_s" src="../imagens/assedio_moral.png" class="w-24 h-24 mr-0 md:mr-3 self-start">                                       
+                                    <!-- textos -->
+                                    <div id="monitorcamo_campo_texto" class="flex flex-col">
+                                    <div id="monitor_titulo_s" class="font-bold text-padrao text-[15px] md:text-[20px]">
+                                        Assédio sexual 
+                                    </div>
+                                    <div id="monitor_texto_s" class="text-padrao text-[15px] md:text-[20px]">
+                                        Atos, insinuações, contatos físicos forçados ou convites impertinentes com a
+                                         intenção de: ser uma condição clara para manter o emprego; influenciar nas promoções da carreira do assediado;
+                                          prejudicar o rendimento profissional, humilhar, insultar ou intimidar a vítima etc
+                                           
+                                    </div>
+                                    </div>
+                                    <!-- textos -->
+                                </div>
+                                <!--botoes-->
+                                <div id="btnNextMessageLeft_s" style="position: absolute; top: 370px; left: 60px;display: none;" >
+                                    <i class="bi bi-arrow-left botao_direcao_computador" onclick="nextPageAssedio_s(0)" style="height: 45px; animation: fadein 750ms infinite;background-color: hwb(210 40% 59%);"></i>
+                                </div>
+                                <div id="btnNextMessageRight_s" style="position: absolute; top: 370px; right: 60px;">
+                                    <i class="bi bi-arrow-right botao_direcao_computador" onclick="nextPageAssedio_s(1)" style="height: 45px; animation: fadein 750ms infinite;background-color: hwb(210 40% 59%);"></i>
+                                </div>
+                                <!--botoes-->
+                            
+                            </div>
+
+                            <!-- <span id="div_info_play">
+                                <div class="flex flex-col w-[170px] items-center md:items-start">
+                                    <div class="text-[13px]">Clique sobre o ícone abaixo ou sobre a tela ao lado para assistir ao vídeo</div>
+                                    <div class="text-[13px] font-bold">“Assédio Sexual”</div>
+                                    <div><img src="../imagens/5.png" class="w-20 md:w-28 cursor-pointer" onclick="onPlay_s()"></div>
+                                </div>
+                            </span> -->
+                        </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+        
+        <script>
+            var estagio = 0;
+            var liberado = false;
+            var pagincaoAssedio = 0;
+            var paginacaoAssedio_s = 0;
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_019.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_021.html';
+            }
+
+            const leitura = (opcao) => {
+                if ((opcao === 1 && estagio >= 0) || (opcao === 1 && liberado)) {
+
+             
+                    $('#opcao_2').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/assedio_moral.png");
+                    $('#mensagem_titulo').html("Assédio moral");
+                    $('#mensagem_texto').html("Conduta abusiva, a exemplo de gestos, palavras e atitudes que se repitam com frequência e de forma sistemática, atingindo a dignidade ou integridade psíquica ou física de um colaborador. Uma desavença esporádica no ambiente de trabalho não caracteriza assédio moral. Assista ao vídeo clicando no ícone abaixo para ampliar os seus conhecimentos e/ou esclarecer possíveis dúvidas.");
+
+                    $('#video_assedio').removeClass("hidden");
+                    $('#video_assedio').addClass("flex");
+
+                    $('#img_opcao_1').removeClass("hidden");
+                    $('#opcao_1').removeClass("bg-white");
+                    $('#opcao_1').addClass("bg-selecionado");
+                    $('#txt_opcao_1').addClass("text-white");
+                    $('#opcao_1').removeClass("animate-pulse");
+
+                        //-------------------------------------------------mensagem
+                   $('#video_assedio_moral').css('display','grid');
+                    $('#video_assedio_sexual').css('display','none');
+                    $('#mensagem_titulo').css('display','none');
+                    $('#mensagem_texto').css('display','none');
+                    $('#mensagem_imagem').css('display','none')
+                 
+                    if(pagincaoAssedio < 6){
+                            $('#player').css('display','none');
+                        }      
+                    //-----------------------------------------
+
+
+                    if (estagio === 0) {
+                        $('#opcao_2').addClass("animate-pulse");
+
+                        estagio = 1;
+                    }
+                }
+                else if ((opcao === 2 && estagio >= 1) || (opcao === 2 && liberado)) {
+                    $('#opcao_3').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/assedio_sexual.png");
+                    $('#mensagem_titulo').html("Assédio sexual");
+                    $('#mensagem_texto').html("Atos, insinuações, contatos físicos forçados ou convites impertinentes com a intenção de: ser uma condição clara para a manutenção do emprego; influenciar nas promoções da carreira do assediado; prejudicar o rendimento profissional, humilhar, insultar, intimidar a vítima etc.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_2').removeClass("hidden");
+                    $('#opcao_2').removeClass("bg-white");
+                    $('#opcao_2').addClass("bg-selecionado");
+                    $('#txt_opcao_2').addClass("text-white");
+                    $('#opcao_2').removeClass("animate-pulse");
+
+                    //--------------------------
+
+
+                    $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','grid');
+                    $('#mensagem_titulo').css('display','none');
+                    $('#mensagem_imagem').css('display','none');
+                    $('#mensagem_texto').css('display','none');
+                    if(paginacaoAssedio_s < 6){
+                            $('#player_s').css('display','none');
+                        }   
+
+
+
+                    if (estagio === 1) {
+                        $('#opcao_3').addClass("animate-pulse");
+
+                        estagio = 2;
+                    }
+                } 
+                else if ((opcao === 3 && estagio >= 2) || (opcao === 3 && liberado)) {
+                    $('#opcao_4').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/conduta_inadequada.png");
+                    $('#mensagem_titulo').html("Conduta inadequada");
+                    $('#mensagem_texto').html("Todas aquelas que não estejam alinhadas com: agir em conformidade com as leis e as regulamentações; comportar-se com honestidade; promover uma cultura de integridade; ser leal e respeitar os outros. Um xingamento pontual, agressão verbal ou física, por exemplo, devem ser classificados como conduta inadequada.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_3').removeClass("hidden");
+                    $('#opcao_3').removeClass("bg-white");
+                    $('#opcao_3').addClass("bg-selecionado");
+                    $('#txt_opcao_3').addClass("text-white");
+                    $('#opcao_3').removeClass("animate-pulse");
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 2) {
+                        $('#opcao_4').addClass("animate-pulse");
+
+                        estagio = 3;
+                    }
+                }
+                else if ((opcao === 4 && estagio >= 3) || (opcao === 4 && liberado)) {
+                    $('#opcao_5').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/conflito_interesses.png");
+                    $('#mensagem_titulo').html("Conflito de interesses");
+                    $('#mensagem_texto').html("Ocorre quando uma decisão é influenciada pelos interesses de apenas uma das partes envolvidas, prejudicando, assim, as demais. Portanto, investir em qualquer tipo de ação para obtenção de vantagens pessoais, prejudicando outros, é tanto antiético quanto imoral. Os conflitos de interesses podem ser identificados em situações envolvendo aspectos pessoais, tais como: econômicos, educacionais, religiosos e sociais.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_4').removeClass("hidden");
+                    $('#opcao_4').removeClass("bg-white");
+                    $('#opcao_4').addClass("bg-selecionado");
+                    $('#txt_opcao_4').addClass("text-white");
+                    $('#opcao_4').removeClass("animate-pulse");
+
+                   //--------------------------
+                     $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 3) {
+                        $('#opcao_5').addClass("animate-pulse");
+
+                        estagio = 4;
+                    }
+                }
+                else if ((opcao === 5 && estagio >= 4) || (opcao === 5 && liberado)) {
+                    $('#opcao_6').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/corrupcao.png");
+                    $('#mensagem_titulo').html("Corrupção");
+                    $('#mensagem_texto').html("É o efeito ou ato de corromper alguém ou algo, com a finalidade de obter vantagens em relação aos outros por meios considerados ilegais ou ilícitos. A ação de corromper pode ser entendida, também, como o resultado de subornar, por exemplo: quando alguém oferece dinheiro ou presentes a alguém em troca de benefícios especiais de interesse próprio. Para fins de denúncias neste canal, considere classificar o seu registro como corrupção quando os fatos apresentados envolverem agentes públicos.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_5').removeClass("hidden");
+                    $('#opcao_5').removeClass("bg-white");
+                    $('#opcao_5').addClass("bg-selecionado");
+                    $('#txt_opcao_5').addClass("text-white");
+                    $('#opcao_5').removeClass("animate-pulse");
+
+                     //--------------------------
+                     $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 4) {
+                        $('#opcao_6').addClass("animate-pulse");
+
+                        estagio = 5;
+                    }
+                }
+                else if ((opcao === 6 && estagio >= 5) || (opcao === 6 && liberado)) {
+                    $('#opcao_7').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/discriminacao_preconceito.png");
+                    $('#mensagem_titulo').html("Discriminação / Preconceito");
+                    $('#mensagem_texto').html("Preconceito é uma atitude hostil contra uma pessoa ou algo, uma opinião ou ideia preconcebida sem conhecimento e/ou reflexão. Discriminação é o ato de estabelecer diferença, de separar e fazer distinção, ou seja, tratamento desigual dado às pessoas em função de suas características raciais, religiosas, etc.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_6').removeClass("hidden");
+                    $('#opcao_6').removeClass("bg-white");
+                    $('#opcao_6').addClass("bg-selecionado");
+                    $('#txt_opcao_6').addClass("text-white");
+                    $('#opcao_6').removeClass("animate-pulse");
+                    //--------------------------
+                    $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 5) {
+                        $('#opcao_7').addClass("animate-pulse");
+
+                        estagio = 6;
+                    }
+                }
+                else if ((opcao === 7 && estagio >= 6) || (opcao === 7 && liberado)) {
+                    $('#opcao_8').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/fraude.png");
+                    $('#mensagem_titulo').html("Fraude");
+                    $('#mensagem_texto').html("Fraude é uma ação ilícita e desonesta, caracterizada pela falsificação de produtos, documentos, marcas etc. O propósito da fraude é de enganar outras pessoas para garantir benefício próprio ou de terceiros. São exemplos de fraudes: a supressão ou omissão de transações nos registros contábeis; registros de transações sem comprovação; marcação de ponto eletrônico do horário de trabalho (entrada e saída) para terceiros etc.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_7').removeClass("hidden");
+                    $('#opcao_7').removeClass("bg-white");
+                    $('#opcao_7').addClass("bg-selecionado");
+                    $('#txt_opcao_7').addClass("text-white");
+                    $('#opcao_7').removeClass("animate-pulse");
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 6) {
+                        $('#opcao_8').addClass("animate-pulse");
+
+                        estagio = 7;
+                    }
+                }    
+                else if ((opcao === 8 && estagio >= 7) || (opcao === 8 && liberado)) {
+                    $('#opcao_9').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/furto_roubo.png");
+                    $('#mensagem_titulo').html("Furto / Roubo");
+                    $('#mensagem_texto').html("Ambos são crimes contra o patrimônio. Enquanto o furto é a prática da extração do pertence de alguém sem estabelecer contato com ela, no roubo, existe o contato e vem acompanhado de violência ou ameaça.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_8').removeClass("hidden");
+                    $('#opcao_8').removeClass("bg-white");
+                    $('#opcao_8').addClass("bg-selecionado");
+                    $('#txt_opcao_8').addClass("text-white");
+                    $('#opcao_8').removeClass("animate-pulse");
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 7) {
+                        $('#opcao_9').addClass("animate-pulse");
+
+                        estagio = 8;
+                    }
+                }     
+                else if ((opcao === 9 && estagio >= 8) || (opcao === 9 && liberado)) {
+                    $('#opcao_10').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/quebra_sigilo.png");
+                    $('#mensagem_titulo').html("Quebra de sigilo de informações / dados");
+                    $('#mensagem_texto').html("Divulgação não autorizada a terceiros, mesmo que colaboradores, de informações de propriedade da Empresa, de seus clientes, fornecedores e colaboradores.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_9').removeClass("hidden");
+                    $('#opcao_9').removeClass("bg-white");
+                    $('#opcao_9').addClass("bg-selecionado");
+                    $('#txt_opcao_9').addClass("text-white");
+                    $('#opcao_9').removeClass("animate-pulse");
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 8) {
+                        $('#opcao_10').addClass("animate-pulse");
+
+                        estagio = 9;
+                    }
+                }   
+                else if ((opcao === 10 && estagio >= 9) || (opcao === 10 && liberado)) {
+                    $('#opcao_11').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/recusos_empresa.png");
+                    $('#mensagem_titulo').html("Uso indevido de recursos da empresa");
+                    $('#mensagem_texto').html("Para funcionar, as empresas necessitam de equipamentos que permitam a realização de suas atividades, como computadores, telefones, e-mails, carros, impressoras, mobiliários, entre outros, que são utilizados pelos funcionários durante o trabalho. Considere utilizar esta classificação quando os fatos que pretende denunciar apresentarem indícios de que alguém está fazendo um uso inadequado destes recursos.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#img_opcao_10').removeClass("hidden");
+                    $('#opcao_10').removeClass("bg-white");
+                    $('#opcao_10').addClass("bg-selecionado");
+                    $('#txt_opcao_10').addClass("text-white");
+                    $('#opcao_10').removeClass("animate-pulse");
+
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    if (estagio === 9) {
+                        $('#opcao_11').addClass("animate-pulse");
+                        
+                        estagio = 10;
+                    }
+                }   
+                else if ((opcao === 11 && estagio >= 10) || (opcao === 11 && liberado)) {
+                    $('#mensagem_imagem').attr("src", "../imagens/violacao_leis.png");
+                    $('#mensagem_titulo').html("Violação de leis e normas em vigor");
+                    $('#mensagem_texto').html("Não cumprir/observar uma lei ou diretriz regulamentar de órgão regulador ou mesmo normas internas de propósito, colocando em risco, por exemplo, a empresa, sua imagem, meio ambiente e seus colaboradores.");
+
+                    $('#video_assedio').removeClass("flex");
+                    $('#video_assedio').addClass("hidden");
+
+                    $('#seguinte').removeClass("invisible");
+
+                    $('#img_opcao_11').removeClass("hidden");
+                    $('#opcao_11').removeClass("bg-white");
+                    $('#opcao_11').addClass("bg-selecionado");
+                    $('#txt_opcao_11').addClass("text-white");
+                    $('#opcao_11').removeClass("animate-pulse");
+
+                                //--------------------------
+                                $('#mensagem_titulo').css('display','block');
+                    $('#mensagem_texto').css('display','block');
+                    $('#mensagem_imagem').css('display','block')
+                    $('#video_assedio_moral').css('display','none');
+                    $('#video_assedio_sexual').css('display','none');
+
+                    estagio = 11;
+                    liberado = true;
+                }                                                                       
+            }
+
+            const nextPageAssedio = (posicao) => {
+
+                if(posicao== 1){
+                    pagincaoAssedio++;
+                    $('#btnNextMessageLeft').css('display','block');
+                    if(pagincaoAssedio >=6){
+                        $('#btnNextMessageRight').css('display','none');
+                        $('#player').css('display','block');
+                    }else{
+                        $('#btnNextMessageRight').css('display','block');
+                        $('#player').css('display','none');
+                    }      
+                }
+                else{
+                    $('#btnNextMessageRight').css('display','block');
+                    $('#player').css('display','none');
+                        if(pagincaoAssedio > 0)  {
+                            pagincaoAssedio--;
+                            if(pagincaoAssedio ==0) {
+                                $('#btnNextMessageLeft').css('display','none');
+                            } else{
+                                $('#btnNextMessageLeft').css('display','block');
+                            }
+                        
+                        } else{
+                            $('#btnNextMessageLeft').css('display','none');
+                        }
+                    }
+                    // segunda parte
+                    $('#monitor_imagem_m').attr("src", "../imagens/assedio_moral.png");
+    //assedio_moral.png
+        switch(pagincaoAssedio){
+            case 0:
+            $('#monitor_titulo_m')
+            .html("Assédio moral");
+            $('#monitor_texto_m')
+            .html("Conduta abusiva, a exemplo de gestos, palavras e atitudes que SE REPITA COM FREQUÊNCIA E DE FORMA SISTEMÁTICA, atingindo a dignidade ou integridade psíquica ou física de um colaborador.");
+
+                break;
+                case 1:
+                $('#monitor_titulo_m')
+                .html("Assédio moral");
+            $('#monitor_texto_m').html("É uma forma de violência que tem como objetivo desestabilizar emocional e profissionalmente o indivíduo e pode ocorrer por meio de ações diretas (acusações, insultos, gritos, humilhações públicas) e indiretas (propagação de boatos, isolamento, recusa na comunicação, fofocas e exclusão social). ");
+                break;
+                case 2:
+                $('#monitor_titulo_m')
+                .html("Assédio moral");
+            $('#monitor_texto_m')
+            .html("A maior parte dos casos de assédio moral origina-se na relação entre chefe e subordinado, mas também pode ser praticado por chefes e colegas, somente entre colegas e uma pequena porcentagem ocorre quando é o subordinado que assedia o seu chefe. ");
+                break;
+                case 3:
+                $('#monitor_titulo_m')
+                .html("Assédio moral");
+            $('#monitor_texto_m')
+            .html("Para gerir o quadro de pessoal, as organizações cada vez mais se utilizam de mecanismos tecnológicos de controle, como ponto eletrônico. Esses mecanismos não podem ser considerados meios de intimidação, uma vez que servem como controle da frequência e da assiduidade dos colaboradores. ");
+                break;
+                case 4:
+                $('#monitor_titulo_m')
+                .html("Assédio moral");
+            $('#monitor_texto_m')
+            .html("É importante observar que toda relação de trabalho requer certo grau de exigências que lhe são próprias. Assim, fazem parte do processo de trabalho as avaliações, cobranças de prazos e qualidade e críticas construtivas. Essas situações não constituem assédio. ");
+                break;
+                case 5:
+                $('#monitor_titulo_m')
+                .html("Assédio moral");
+            $('#monitor_texto_m').html("Atitudes que se classificam como sendo atos de “grosseria”, denotam falta de empatia, descortesia, incivilidade ou ausência de educação e, portanto, embora condenáveis, não podem ser confundidas com assédio moral.");
+                            $('#monitor_imagem_m').css('display','block');
+                $('#monitorcamo_campo_texto').css('display','block');   
+            break;
+                case 6:
+                $('#monitor_imagem_m').css('display','none');
+                $('#monitorcamo_campo_texto').css('display','none');
+
+               break;
+
+
+        }  
+}
+
+const nextPageAssedio_s = (posicao) => {
+
+if(posicao== 1){
+    paginacaoAssedio_s++;
+    $('#btnNextMessageLeft_s').css('display','block');
+    if(paginacaoAssedio_s >=6){
+        $('#btnNextMessageRight_s').css('display','none');
+        $('#player_s').css('display','block');
+    }else{
+        $('#btnNextMessageRight_s').css('display','block');
+        $('#player_s').css('display','none');
+       
+    }      
+}
+else{
+    $('#btnNextMessageRight_s').css('display','block');
+    $('#player_s').css('display','none');
+        if(paginacaoAssedio_s > 0)  {
+            paginacaoAssedio_s--;
+            if(paginacaoAssedio_s ==0) {
+                $('#btnNextMessageLeft_s').css('display','none');
+            } else{
+                $('#btnNextMessageLeft_s').css('display','block');
+            }
+          
+        } else{
+            $('#btnNextMessageLeft_s').css('display','none');
+        }
+    }
+    // segunda parte
+     $('#monitor_imagem_s').attr("src", "../imagens/assedio_sexual.png");
+    //assedio_moral.png
+        switch(paginacaoAssedio_s){
+            case 0:
+            $('#monitor_titulo_s')
+            .html("Assédio sexual");
+            $('#monitor_texto_s')
+            .html("Atos, insinuações, contatos físicos forçados ou convites impertinentes com a intenção de: ser uma condição clara para manter o emprego; influenciar nas promoções da carreira do assediado; prejudicar o rendimento profissional, humilhar, insultar ou intimidar a vítima etc.");
+
+                break;
+                case 1:
+                $('#monitor_titulo_s')
+                .html("Assédio sexual");
+            $('#monitor_texto_s').html("O flerte, quando recíproco, não é assédio. A vítima deve expressar sua rejeição, barrar o assediador. Importante reforçar que o silêncio não é considerado aceitação, porque a vítima pode estar em desvantagem e com medo, especialmente quando o assédio vem por parte de um superior hierárquico ou alguém que tenha ascendência sobre ela.");
+                break;
+                case 2:
+                $('#monitor_titulo_s')
+                .html("Assédio sexual");
+            $('#monitor_texto_s')
+            .html("Também existe a possibilidade de o assédio ser fora do ambiente de trabalho, mas em razão dele, como em intervalos, durante uma carona antes ou depois da jornada de trabalho, contato por redes sociais, mesmo em dias de folga");
+                break;
+                case 3:
+                $('#monitor_titulo_s')
+                .html("Assédio sexual");
+            $('#monitor_texto_s')
+            .html("Podem caracterizar assédio sexual atitudes como: Mostrar ou partilhar imagens explicitamente sexuais; Telefonemas ou mensagens de natureza sexual; Comentários sexuais sobre a forma de se vestir; Assobiar, fazer sons ou gestos inapropriados; Contar piadas com caráter obsceno e sexual; Tocar, abraçar ou beijar sem permissão; Olhar de forma ofensiva.");
+            $('#monitor_texto_s').css('font-size','20px')  
+            break;
+                case 4:
+                $('#monitor_titulo_s')
+                .html("Assédio sexual");
+            $('#monitor_texto_s')
+            .html("Em geral, o que a lei fala é que a conduta do agressor deve ser reiterada para caracterizar assédio sexual, ou seja, ele deve se comportar de forma insistente, mais de uma vez. Porém, às vezes, um único ato também pode ser caracterizado como assédio. Basta pensar em uma situação em que o assediador agarra a vítima, ou realiza qualquer ato mais brusco visando a obtenção de uma vantagem sexual. A simples agressão, neste caso, basta. ");
+            $('#monitor_texto_s').css('font-size','18px')  
+            
+            break;
+                case 5:
+                $('#monitor_titulo_s')
+                .html("Assédio sexual");
+            $('#monitor_texto_s').html("Se você teve conhecimento de alguém que sofreu assédio sexual na Companhia ou se você é a vítima, denuncie imediatamente. Utilize o Canal de Denúncias para garantir o sigilo e o tratamento adequado desta situação.");
+            
+            $('#monitor_texto_s').css('font-size','20px')  
+            $('#player_s').css('display','none');
+            $('#monitor_imagem_s').css('display','block');
+                $('#monitor_titulo_s').css('display','block');
+                $('#monitor_texto_s').css('display','block');
+            break;
+                case 6:
+                $('#monitor_imagem_s').css('display','none');
+                $('#monitor_titulo_s').css('display','none');
+                $('#monitor_texto_s').css('display','none');
+                $('#monitor_campo_texto_s').css('display','none');
+
+               break;
+
+        }  
+}
+
+
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    videoId: 'BpfJHcm8iGo',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlay() {
+                if (player)
+                    player.playVideo();
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    stopVideo();
+                    done = true;
+                }
+                else if (event.data === 0) {
+                    $('#img_reuniao').addClass("animate-pulse");
+                    viuVideo = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+//--------------------------------------------------------------
+            var player_s;
+            function onYouTubeIframeAPIReady_s() {
+                player_s = new YT.Player('player_s', {
+                    videoId: 'M_nGxBoVEeY&t=8s',
+                    events: {
+                        'onReady': onPlayerReady_s,
+                        'onStateChange': onPlayerStateChange_s
+                    }
+                });
+            }
+
+            function onPlay_s() {
+                if (player_s)
+                player_s.playVideo();
+            }
+
+            function onPlayerReady_s(event) {
+                event.target.playVideo();
+            }
+
+            var done_2 = false;
+            function onPlayerStateChange_s(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done_2) {
+                    stopVideo_s();
+                    done_2 = true;
+                }
+                else if (event.data === 0) {
+                    $('#img_reuniao').addClass("animate-pulse");
+                    viuVideo = true;
+                }
+            }
+            function stopVideo_s() {
+    if (player_s) {
+        player_s.stopVideo();
+    }
+    }
+
+        </script>
+    </body>
+</html>

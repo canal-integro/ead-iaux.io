@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex h-screen w-full flex-col md:flex-row">
+                <div class="flex flex-col w-full justify-center md:w-[300px] p-8 border-r border-r-separacao">
+                    <div class="flex flex-col">
+                        <div class="text-padrao text-[16px] md:text-[20px] font-bold">2. Devo denunciar?</div>
+                        <div class="text-padrao mt-5 text-[13px] md:text-[17px]">É compreensível que algumas pessoas enfrentem dilemas pessoais que geram dúvidas sobre tomar a decisão de registrar ou não a denúncia de uma conduta inadequada a que teve conhecimento.</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between w-full" style="padding-bottom: 120px;">
+                    <div class="flex flex-col md:flex-row w-full">
+
+                        <div id="div-info" class="flex flex-col md:mr-5 pr-8 pl-8 mt-2 w-full">
+                            <div class="flex flex-row md:mt-5 w-full">
+                                <div class="flex flex-col md:flex-row rounded-lg border-2 border-titulo p-10 items-center w-full">
+                                    <img id="img_apresentacao" src="../imagens/cadeado_fechado_ativo.png" class="w-12 h-12 md:w-15 md:h-15 mr-5">
+                                    <div class="flex flex-col">
+                                        <div id="div_titulo" class="font-bold text-[18px] md:text-[20px]">Minhas garantias</div>
+                                        <div class="text-[14px] md:text-[16px]">Então, se é um dever legal e moral registrar uma denúncia sobre possíveis condutas inadequadas a que se teve conhecimento, quais são as garantias que o Canal disponibiliza para que se tenha segurança em cumprir tal dever?</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 self-center md:self-start">Clique sobre os cadeados abaixo</div>
+
+                            <div class="flex flex-col md:flex-row mt-2 md:mt-4 w-full">
+                                <div class="flex flex-row md:flex-col w-[200px]">
+                                    <img id="opcao_1" src="../imagens/cadeado_aberto_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(1)">
+                                    <img id="opcao_2" src="../imagens/cadeado_aberto_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(2)">
+                                    <img id="opcao_3" src="../imagens/cadeado_aberto_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(3)">
+                                    <img id="opcao_4" src="../imagens/cadeado_aberto_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(4)">
+                                </div>
+
+                                <div id="div_mensagem" class="flex flex-col p-2 invisible w-full">
+                                    <div id="mensagem_titulo" class="text-[15px] md:text-[20px] font-bold">Anonimato e sigilo</div>
+                                    <div id="mensagem_texto" class="text-[13px} md:text-[18px]">As pessoas que fazem denúncias NÂO são identificadas se, assim, desejarem. Caso você decida identificar-se, somente os membros do Comitê de Ética terão acesso a essa informação mantendo-a no mais absoluto sigilo.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script>
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_014.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_016.html';
+            }
+
+            var estagio = 0;
+            var terminou = false;
+
+            function leitura(valor) {
+                if ((valor === 1 && estagio >= 0) || (valor === 1 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_1').attr("src", "../imagens/cadeado_fechado_ativo.png");                    
+                    $('#mensagem_titulo').html("Anonimato e sigilo");
+                    $('#mensagem_texto').html("As pessoas que fazem denúncias NÂO são identificadas se, assim, desejarem. Caso você decida identificar-se, somente os membros do Comitê de Ética terão acesso a essa informação mantendo-a no mais absoluto sigilo.");
+
+                    if (estagio === 0) {
+                        estagio = 1;
+                    }
+                }
+                else if ((valor === 2 && estagio >= 1) || (valor === 2 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_2').attr("src", "../imagens/cadeado_fechado_ativo.png");                    
+                    $('#mensagem_titulo').html("Dados de origem não identificáveis");
+                    $('#mensagem_texto').html("Os números de IPs dos computadores que originaram as denúncias jamais são identificados, bem como o número do telefone que fez a ligação para o 0800 (cláusula contratual inclusive).");
+
+                    if (estagio === 1) {
+                        estagio = 2;
+                    }
+                }
+                else if ((valor === 3 && estagio >= 2) || (valor === 3 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_3').attr("src", "../imagens/cadeado_fechado_ativo.png");                    
+                    $('#mensagem_titulo').html("Independência");
+                    $('#mensagem_texto').html("Profissionais da Iaux Brasil não possuem qualquer vínculo com os profissionais da Organização, bem como não estão no mesmo endereço/ambiente de trabalho. Isto impede ações de cooptação, intimidação, favorecimentos e parcialidades, pois, há independência total daqueles que são alvos das denúncias.");
+
+                    if (estagio === 2) {
+                        estagio = 3;
+                    }
+                }
+                else if ((valor === 4 && estagio >= 3) || (valor === 4 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_4').attr("src", "../imagens/cadeado_fechado_ativo.png");                    
+                    $('#mensagem_titulo').html("Integridade");
+                    $('#mensagem_texto').html("Todos os registros feitos no Canal são armazenados e tratados no ambiente de tecnologia da Iaux Brasil, impossibilitando que qualquer pessoa possa apagar ou alterar os dados registrados em uma denúncia, bem como garantindo a manutenção da confidencialidade dos dados. Vale destacar que somente os integrantes do Comitê de Ética é que possuem acesso, concedido pela Iaux, às informações.<br/><br/>Importante esclarecer que se, eventualmente, um membro do Comitê for denunciado, ele não terá acesso ao registro, pois a própria Iaux Brasil fará este bloqueio.");
+
+                    $('#seguinte').removeClass("invisible");
+
+                    estagio = 4;
+                    terminou = true;
+                }
+            }
+        </script>
+    </body>
+</html>

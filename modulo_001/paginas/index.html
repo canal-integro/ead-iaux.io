@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div class="flex flex-row justify-center items-center h-screen md:scale-75">
+            <img class="animation_fadein" src="../imagens/iaux_logo_grande.png" alt="IAUX">
+        </div>
+
+        <script>
+            $(document).ready(() => {
+                setTimeout(() => {
+                    document.location.href = "../paginas/ead_001.html";
+                }, [5000]);
+            })
+        </script>
+    </body>
+</html>

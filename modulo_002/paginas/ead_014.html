@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex h-screen w-full flex-col md:flex-row">
+                <div class="flex flex-col w-full justify-center md:w-[300px] p-8 border-r border-r-separacao">
+                    <div class="flex flex-col">
+                        <div class="text-padrao text-[16px] md:text-[20px] font-bold">2. Devo denunciar?</div>
+                        <div class="text-padrao mt-5 text-[13px] md:text-[17px]">É compreensível que algumas pessoas enfrentem dilemas pessoais que geram dúvidas sobre tomar a decisão de registrar ou não a denúncia de uma conduta inadequada a que teve conhecimento.</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between w-full" style="padding-bottom: 120px;">
+                    <div class="flex flex-col md:flex-row w-full">
+
+                        <div id="div-info" class="flex flex-col items-center md:mr-5 pr-8 pl-8 mt-2 w-full">
+                            <div class="flex flex-row md:mt-5 w-full">
+                                <div class="flex flex-col md:flex-row rounded-lg border-2 border-titulo p-10 items-center w-full">
+                                    <img id="img_apresentacao" src="../imagens/denuncia_ativo.png" class="w-12 h-12 md:w-15 md:h-15 mr-5">
+                                    <div class="flex flex-col">
+                                        <div id="div_titulo" class="font-bold text-[18px] md:text-[20px]">Denunciar não é algo errado e perigoso?</div>
+                                        <div id="div_mensagem" class="text-[14px] md:text-[16px]">É um dever individual levar ao conhecimento dos responsáveis pela gestão da ética na organização, uma situação concreta ou uma desconfiança de que houve uma conduta que não esteja alinhada com os valores da instituição, leis ou regulamentos em vigor.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="relative bg-monitor bg-cover bg-no-repeat w-[300px] md:w-[500px] h-[230px] md:h-[400px] lg:w-[860px] lg:h-[670px] mr-0 md:mr-3">
+                                    <div id="player" class="relative w-[264px] md:w-[449px] lg:w-[761px] h-[152px] md:h-[254px] lg:h-[429px] top-[14px] md:top-[22px] lg:top-[38px] left-[18px] md:left-[31px] lg:left-[53px]"></div>
+                                </div>
+
+                                <span id="div_info_play">
+                                    <div class="flex flex-col w-[200px] items-center md:items-start">
+                                        <span class="hidden md:block">
+                                            <div class="text-[13px]">Clique sobre o ícone abaixo ou sobre a tela ao lado para assistir ao vídeo</div>
+                                        </span>
+                                        <span class="block md:hidden">
+                                            <div class="text-[13px]">Clique sobre o ícone abaixo ou sobre a tela ao acima para assistir ao vídeo</div>
+                                        </span>
+                                        <div class="text-[13px] font-bold">"Canal de Denúncias e a informação transformadora”</div>
+                                        <div><img src="../imagens/5.png" class="w-20 md:w-28 cursor-pointer" onclick="onPlay()"></div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script>
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_013.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_015.html';
+            }
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    videoId: '8g-tEgEJR1k',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlay() {
+                if (player)
+                    player.playVideo();
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    stopVideo();
+                    done = true;
+                }
+                else if (event.data === 0) {
+                    $('#seguinte').removeClass("invisible");
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+    </body>
+</html>

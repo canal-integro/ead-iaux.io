@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex h-screen w-full flex-col md:flex-row">
+                <div class="flex flex-col w-full justify-center md:w-[300px] p-8 border-r border-r-separacao">
+                    <div class="flex flex-col">
+                        <div class="text-padrao text-[16px] md:text-[20px] font-bold">3. O que denunciar?</div>
+                        <div class="text-padrao mt-5 text-[13px] md:text-[17px]">Toda a suspeita ou ação concreta de um colaborador ou grupo de colaboradores que viole as regras e os valores da instituição, representados no Código de Conduta, bem como leis e regulamentos em vigor.</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between w-full" style="padding-bottom: 120px;">
+                    <div class="flex flex-col md:flex-row w-full">
+
+                        <div id="div-info" class="flex flex-col md:mr-5 pr-8 pl-8 mt-2 w-full">
+                            <div class="flex flex-row md:mt-5 w-full">
+                                <div class="flex flex-col md:flex-row rounded-lg border-2 border-titulo p-10 items-center w-full">
+                                    <img id="img_apresentacao" src="../imagens/proibido.png" class="w-12 h-12 md:w-20 md:h-20 mr-5">
+                                    <div class="flex flex-col">
+                                        <div id="div_titulo" class="font-bold text-[18px] md:text-[20px]">O que não faz parte do escopo do Canal?</div>
+                                        <div class="text-[14px] md:text-[16px]">Algumas situações vivenciadas no dia a dia podem gerar o desejo de registrar uma manifestação no Canal, porém, pode ser que esta situação não faça parte do escopo de análise e tratamento de um Canal de Denúncias. Clique nos ícones abaixo e veja alguns exemplos:</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row mt-2 md:mt-4 w-full">
+                                <div class="flex flex-row md:flex-col w-[200px]">
+                                    <img id="opcao_1" src="../imagens/exclamacao_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(1)">
+                                    <img id="opcao_2" src="../imagens/exclamacao_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(2)">
+                                    <img id="opcao_3" src="../imagens/exclamacao_inativo.png" class="w-14 md:w-20 cursor-pointer" onclick="leitura(3)">
+                                </div>
+
+                                <div id="div_mensagem" class="flex flex-col p-2 invisible w-full">
+                                    <div id="mensagem_titulo" class="text-[15px] md:text-[20px] font-bold">Anonimato e sigilo</div>
+                                    <div id="mensagem_texto" class="text-[13px} md:text-[18px]">As pessoas que fazem denúncias não são identificadas se não desejarem. Se você decidir se identificar, somente os membros do Comitê de Ética é que terão acesso a esta informação e a manterão no mais absoluto sigilo.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script>
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_020.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_022.html';
+            }
+
+            var estagio = 0;
+            var terminou = false;
+
+            function leitura(valor) {
+                if ((valor === 1 && estagio >= 0) || (valor === 1 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_1').attr("src", "../imagens/exclamacao_ativo.png");                    
+                    $('#mensagem_titulo').html("Reclamação");
+                    $('#mensagem_texto').html("Reclamar, por exemplo, que um colega não deu a devida atenção a um pedido sobre um processo interno ou não respondeu seu e-mail no prazo que precisava, não caracteriza um desvio ético de conduta e, portanto, não faz parte do escopo do Canal. Situações como ar-condicionado gelado ou desligado, falta de higiene/limpeza em ambientes, equipamentos inadequados para exercício da função também são outros exemplos que não correspondem com um desvio ético de conduta.<br/><br/>Em situações assim, o seu gestor deve ser procurado ou o gestor da área responsável pelo processo envolvido. Lembre-se que o diálogo respeitoso e profissional é sempre o melhor canal para resolução de problemas que podem surgir no cotidiano.");
+
+                    if (estagio === 0) {
+                        estagio = 1;
+                    }
+                }
+                else if ((valor === 2 && estagio >= 1) || (valor === 2 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_2').attr("src", "../imagens/exclamacao_ativo.png");                    
+                    $('#mensagem_titulo').html("Insatisfação");
+                    $('#mensagem_texto').html("Um gestor que atue de forma mais rígida no dia a dia realizando cobranças constantes pode, a seu ver, não lhe inspirar simpatia e gerar certa insatisfação. No entanto, possuir um perfil como esse não caracteriza desvio ético de conduta, desde que o seu comportamento mantenha-se no campo do respeito profissional. Outras situações como promoções, mudanças de área ou horário, podem gerar insatisfação, mas não se enquadram como desvios de conduta.");
+
+                    if (estagio === 1) {
+                        estagio = 2;
+                    }
+                }
+                else if ((valor === 3 && estagio >= 2) || (valor === 3 && terminou)) {
+                    $('#div_mensagem').removeClass("invisible");
+
+                    $('#opcao_3').attr("src", "../imagens/exclamacao_ativo.png");                    
+                    $('#mensagem_titulo').html("Mudanças em políticas organizacionais");
+                    $('#mensagem_texto').html("Alterações em escalas de trabalho, período de férias e políticas da organização que podem impactar no seu dia a dia, também podem gerar insatisfação em alguns profissionais. Mas, diferentemente da situação anterior, a insatisfação gerada pelas razões citadas devem, na verdade, ser encaradas como naturais em instituições de qualquer setor. Nesse caso é recomendável, também, o diálogo com o seu gestor ou com o gestor da área de recursos humanos para que se possa ter uma melhor compreensão sobre os fatores que resultaram na necessidade de tais mudanças.");
+
+                    $('#seguinte').removeClass("invisible");
+
+                    estagio = 3;
+                    terminou = true;
+                }
+            }
+        </script>
+    </body>
+</html>

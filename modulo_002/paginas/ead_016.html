@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-padrao">
+        <div class="flex h-screen w-full justify-between flex-col">
+            <img src="../imagens/iaux_logo_branco.png" class="mt-4 w-32 h-30 self-center md:self-end">
+
+            <div class="flex w-full justify-center items-center">
+                <div class="flex flex-col md:flex-row w-4/5 md:w-4/5 mt-20 md:mt-0">
+                    <img src="../imagens/carinha_feliz.png" class="w-44 self-center md:w-80 md:h-72 mb-5 md:mb-0 md:mr-10">
+
+                    <div class="flex flex-col md:mr-15">
+                        <div class="text-white text-[13px] md:text-[25px] font-bold">
+                            2. Devo denunciar?
+                        </div>
+                        <div class="text-white text-[25px] md:text-[55px] font-bold mt-8 md:mt-15">
+                            Maravilha!
+                        </div>
+
+                        <div class="text-white text-[13px] md:text-[20px] mt-10">
+                            Você chegou ao final deste módulo e estamos evoluindo muito bem.
+                        </div>
+                        <div class="text-white text-[13px] md:text-[20px] mt-5">
+                            Caso deseje garantir uma maior fixação do conteúdo estudado, revise o módulo.
+                        </div>
+                        <div class="text-white text-[13px] md:text-[20px] mt-5">
+                            Já chegamos à metade do curso. Se possível, faça o próximo módulo na sequência para assimilar o treinamento de forma conjunta.
+                        </div>     
+                        <div class="text-white text-[13px] md:text-[20px] mt-5">
+                            Lembre-se de acessar o conteúdo do Código sempre que necessário. Basta clicar sobre o ícone ao lado.
+                        </div>                                                                   
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center p-10 border border-white rounded-xl h-48 md:h-64 self-center mt-10 md:mt-0 ml-0 md:ml-5">
+                        <img src="../imagens/16.png" class="w-24 md:w-80">
+
+                        <div class="text-white text-center text-[14px] md:text-[16px]">
+                            Código de Ética e Conduta
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex mb-5 mr-5 self-end items-center justify-self-end mt-5 md:mt-0">
+                <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                <div class="text-titulo text-[12px] md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                <img src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 animate-pulse cursor-pointer hidden" onclick="proximo()">
+            </div>                 
+        </div>
+
+        <script>
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_015.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_017.html';
+            }
+        </script>
+    </body>
+</html>

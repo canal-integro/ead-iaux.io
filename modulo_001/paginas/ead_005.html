@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex w-full flex-col md:flex-row">
+
+                <div class="flex justify-center flex-col w-full md:w-[300px] p-8 border-r border-r-separacao h-full">
+                    <div class="text-padrao text-[20px] lg:text-[20px] xl:text-[30px] font-bold">1. Razões</div>
+                    <div class="text-padrao mt-10 text-[13px] lg:text-[13px] xl:text-[15px]">Instituições do mundo inteiro, de todos os mercados e portes, estão implementando canais para recebimento de denúncias de desvios de conduta praticados dentro de seus ambientes.</div>
+                    <div class="text-padrao mt-5 text-[13px] lg:text-[13px] xl:text-[15px] font-bold">Quais seriam as razões para essas instituições implementarem este tipo de ferramenta?</div>
+                </div>
+
+                <div class="flex flex-col w-full justify-between items-center" style="padding-bottom: 120px;">
+                    <div class="w-4/5 md:w-4/5 md:mt-10">
+                        <div class="flex flex-col bg-padrao rounded drop-shadow-md p-6 items-center">
+                            <div class="text-white font-bold">
+                                Antes de sabermos quando e como utilizar o Canal, é preciso compreender a razão de sua existência:
+                            </div>
+                            <div class="text-white italic text-[12px]">
+                                Clique sobre cada um dos itens abaixo.
+                            </div>
+
+                            <div class="flex flex-col justify-between items-center w-full md:w-4/5 mt-10">
+                                <div class="flex flex-col md:flex-row justify-between w-full items-center">
+                                    <div id="opcao_1" class="flex justify-center items-center w-full md:w-40 xl:w-60 bg-gray-400 animate-pulse rounded h-12 drop-shadow-md cursor-pointer" onclick="leitura(1)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_1" class="mr-2">Desconfiança?</div>
+                                            <img id="img_opcao_1" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_2" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(2)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_2" class="mr-2">Determinação legal?</div>
+                                            <img id="img_opcao_2" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col md:flex-row justify-between w-full items-center mt-2">
+                                    <div id="opcao_3" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md bg-gray-400" onclick="leitura(3)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_3" class="mr-2">Exigência de cliente?</div>
+                                            <img id="img_opcao_3" src="../imagens/33_branco.png" class="w-[20px] md:w-[23px] hidden">
+                                        </div>
+                                    </div>
+                                    <div id="opcao_4" class="flex justify-center items-center w-full md:w-40 xl:w-60 rounded h-12 drop-shadow-md mt-2 md:mt-0 bg-gray-400" onclick="leitura(4)">
+                                        <div class="flex items-center text-center text-laranja font-bold text-[13px] md:text-[14px]">
+                                            <div id="txt_opcao_4">Melhores práticas de Governança?</div>
+                                            <img id="img_opcao_4" src="../imagens/33_branco.png" class="w-[20px] h=[20px] md:w-[23px] md:h-[23px] hidden mr-5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row bg-white mt-5 rounded p-5 drop-shadow-md items-center">
+                            <img id="mensagem_imagem" src="../imagens/detetive.png" class="w-24 h-24 mr-0 md:mr-3 invisible">
+
+                            <div id="texto" class="flex flex-col invisible">
+                                <div id="mensagem_titulo" class="font-bold text-padrao text-[15px] md:text-[20px]">
+                                    Desconfiança?
+                                </div>
+                                <div id="mensagem_texto" class="text-padrao text-[15px] md:text-[20px]">
+                                    Se um cidadão utiliza o cinto de segurança apenas porque há uma lei que obriga o uso e ele tem medo de ser multado, não terá entendido a importância do dispositivo para a sua própria vida. Embora existam certos regulamentos que exigem que as empresas tenham canal de denúncias, a exigência legal não deve ser o fator determinante para que a instituição implemente esta ferramenta. </div>
+                                <div style="position: absolute; top: 10px; right: -40px">
+                                    <img id="sinal" src="../imagens/n_ok.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var estagio = 0;
+            var liberado = false;
+
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_004.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_006.html';
+            }
+
+            const leitura = (opcao) => {
+                if (opcao === 1 && estagio >= 0) {
+                    $('#opcao_2').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/detetive.png");
+                    $('#mensagem_titulo').html("Desconfiança?");
+                    $('#mensagem_texto').html("Se uma organização desconfia que alguém esteja tendo comportamentos não alinhados ao seu Código de Conduta ou com as leis e regulamentos em vigor, ela deve procurar por mecanismos que a auxiliem na confirmação ou não dessas suspeitas, como, por exemplo, uma auditoria. Implementar um Canal para toda a instituição em razão de desconfiança não é um motivo adequado, até mesmo por conta dos custos envolvidos.");
+                    $('#sinal').attr('src', '../imagens/n_ok.png');
+
+                    $('#img_opcao_1').removeClass("hidden");
+                    $('#opcao_1').removeClass("bg-white");
+                    $('#opcao_1').addClass("bg-selecionado");
+                    $('#opcao_1').removeClass("animate-pulse");
+                    $('#txt_opcao_1').addClass('text-white');
+
+                    if (estagio === 0) {
+                        $('#opcao_2').addClass("animate-pulse");
+
+                        estagio = 1;
+                    }
+                }
+                else if (opcao === 2 && estagio >= 1) {
+                    $('#opcao_3').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/balanca.png");
+                    $('#mensagem_titulo').html("Determinação legal?");
+                    $('#mensagem_texto').html("Se um cidadão, num veículo automotivo, utilizar o cinto de segurança apenas porque há uma lei que o obriga e pelo medo de ser multado, não compreendeu a importância do dispositivo que é capaz de salvar a sua própria vida e a de terceiros. Assim, embora existam alguns mercados como, por exemplo, o financeiro, que exigem das empresas do setor a implantação do canal de denúncias, a exigência legal em si mesma não deve ser o fator determinante para que uma instituição implemente essa ferramenta.");
+                    $('#sinal').attr('src', '../imagens/n_ok.png');
+
+                    $('#img_opcao_2').removeClass("hidden");
+                    $('#opcao_2').removeClass("bg-white");
+                    $('#opcao_2').removeClass("animate-pulse");
+                    $('#opcao_2').addClass("bg-selecionado");
+                    $('#txt_opcao_2').addClass('text-white');
+
+                    if (estagio === 1) {
+                        $('#opcao_3').addClass("animate-pulse");  
+
+                        estagio = 2;
+                    }
+                } 
+                else if (opcao === 3 && estagio >= 2) {
+                    $('#opcao_4').addClass("cursor-pointer");
+
+                    $('#mensagem_imagem').attr("src", "../imagens/pessoas_balao.png");
+                    $('#mensagem_titulo').html("Exigência de cliente?");
+                    $('#mensagem_texto').html("Se um cliente precisar exigir de uma determinada organização a implementação de um canal de denúncias para fazer negócios com ela, revelará, com isso, que tal empresa já estará em desvantagem comercial no mercado. Possuir um dispositivo como esse, demonstra o cuidado e preocupação da companhia com a integridade e a ética nos negócios. Portanto, a exigência de um cliente não deve ser o fator determinante para que uma instituição implemente a ferramenta.");
+                    $('#sinal').attr('src', '../imagens/n_ok.png');
+
+                    $('#img_opcao_3').removeClass("hidden");
+                    $('#opcao_3').removeClass("bg-white");
+                    $('#opcao_3').removeClass("animate-pulse");
+                    $('#opcao_3').addClass("bg-selecionado");
+                    $('#txt_opcao_3').addClass('text-white');
+
+                    if (estagio === 2) {
+                        $('#opcao_4').addClass("animate-pulse");
+
+                        estagio = 3;
+                    }
+
+                }
+                else if (opcao === 4 && estagio >= 3) {
+                    $('#mensagem_imagem').attr("src", "../imagens/grafico.png");
+
+                    $('#mensagem_titulo').html("Melhores práticas de Governança?");
+                    $('#mensagem_texto').html("Simplificando, Governança é a forma como uma companhia é administrada. Um desvio de conduta pode afetar o clima em seu ambiente organizacional, a motivação, a produtividade, a qualidade dos produtos e serviços, a imagem da instituição, os resultados financeiros e, por fim, a sua capacidade em gerar emprego e renda. Portanto, a organização que possui um Código de Ética e Conduta e um Canal de Denúncias alcança maior credibilidade perante colaboradores, fornecedores, clientes, governo e a sociedade em geral. Essa sim, deve ser a razão para implementação de um Canal de Denúncias.");
+
+                    $('#seguinte').removeClass("invisible");
+                    $('#sinal').attr('src', '../imagens/ok.png');
+
+                    $('#img_opcao_4').removeClass("hidden");
+                    $('#opcao_4').removeClass("bg-white");
+                    $('#opcao_4').removeClass("animate-pulse");
+                    $('#opcao_4').addClass("bg-selecionado");
+                    $('#txt_opcao_4').addClass('text-white');
+
+                    estagio = 4;
+                    liberado = true;
+                }
+            }
+        </script>
+    </body>
+</html>

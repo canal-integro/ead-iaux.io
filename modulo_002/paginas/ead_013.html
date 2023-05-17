@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex w-full flex-col md:flex-row">
+                <div class="flex flex-col w-full justify-center md:w-[300px] p-8 border-r border-r-separacao">
+                    <div class="flex flex-col">
+                        <div class="text-padrao text-[16px] md:text-[20px] font-bold">2. Devo denunciar?</div>
+                        <div class="text-padrao mt-5 text-[13px] md:text-[17px]">É compreensível que algumas pessoas enfrentem dilemas pessoais que geram dúvidas sobre tomar a decisão de registrar ou não a denúncia de uma conduta inadequada a que teve conhecimento.</div>
+                        <div class="text-padrao mt-5 text-[13px] md:text-[17px] font-bold">Clique nos ícones ao lado e veja algumas delas:</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-row md:flex-col justify-center items-center w-full md:w-1/12">
+                    <img id="img_mao" src="../imagens/mao_inativa.png" class="w-10 md:w-14 mr-2 md:mr-0 cursor-pointer animate-pulse" onclick="leitura(1)">
+                    <img id="img_reuniao" src="../imagens/reuniao_inativo.png" class="w-10 md:w-14 mr-2 md:mr-0 cursor-pointer" onclick="leitura(2)">
+                    <img id="img_pessoas" src="../imagens/pessoas_inativo.png" class="w-10 md:w-14 mr-2 md:mr-0 cursor-pointer" onclick="leitura(3)">
+                    <img id="img_desfazer" src="../imagens/desfazer_inativo.png" class="w-10 md:w-14 mr-2 md:mr-0 cursor-pointer" onclick="leitura(4)">
+                    <img id="img_denuncia" src="../imagens/denuncia_inativo.png" class="w-10 md:w-14 cursor-pointer" onclick="leitura(5)">
+                </div>
+
+                <div class="flex flex-col justify-between w-full" style="padding-bottom: 120px;">
+                    <div class="flex flex-col md:flex-row w-full">
+
+                        <div id="div-info" class="flex flex-col items-center md:mr-5 pr-8 pl-8 mt-2 invisible w-full">
+                            <div class="flex flex-row md:mt-5 w-full h-full md:h-32">
+                                <div class="flex flex-col md:flex-row rounded-lg border-2 border-titulo p-8 items-center w-full">
+                                    <img id="img_apresentacao" src="../imagens/mao_ativa.png" class="w-12 h-12 md:w-15 md:h-15 mr-5">
+                                    <div class="flex flex-col">
+                                        <div id="div_titulo" class="font-bold text-[18px] md:text-[20px]">Dedo-duro eu?</div>
+                                        <div id="div_mensagem" class="text-[14px] md:text-[16px]">Quem faz uma denúncia de boa-fé sobre algo de errado a que teve conhecimento, não pode ser rotulado como dedo-duro. Denunciar é mais que uma obrigação legal, é um dever moral!</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="relative bg-monitor bg-cover bg-no-repeat w-[300px] md:w-[500px] h-[230px] md:h-[400px] lg:w-[860px] lg:h-[670px] mr-0 md:mr-3">
+                                    <div id="player" class="relative w-[264px] md:w-[449px] lg:w-[761px] h-[152px] md:h-[254px] lg:h-[429px] top-[14px] md:top-[22px] lg:top-[38px] left-[18px] md:left-[31px] lg:left-[53px]"></div>
+                                    <div id="monitor_mensagem" class="relative w-[264px] md:w-[449px] lg:w-[761px] h-[152px] md:h-[254px] lg:h-[429px] top-[14px] md:top-[22px] lg:top-[38px] left-[18px] md:left-[31px] lg:left-[53px] hidden"></div>
+                                </div>
+
+                                <span id="div_info_play" class="hidden">
+                                    <div class="flex flex-col w-[200px] items-center md:items-start">
+                                        <div class="text-[13px]">Clique sobre o ícone abaixo ou sobre a tela ao lado para assistir ao vídeo</div>
+                                        <div class="text-[13px] font-bold">“Dedo-duro é coisa de comparsa”</div>
+                                        <div><img src="../imagens/5.png" class="w-20 md:w-28 cursor-pointer" onclick="onPlay()"></div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script>
+            var estagio = 0;
+            var liberado = false;
+            var viuVideo = false;
+
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_012.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_014.html';
+            }
+
+            const leitura = (opcao) => {
+                if ((opcao === 1 && estagio >= 0) || (opcao === 1 && liberado)) {
+                    $('#img_mao').attr("src", "../imagens/mao_ativa.png");
+                    $('#div-info').removeClass("invisible");
+                    $('#img_apresentacao').attr("src", "../imagens/mao_ativa.png");
+
+                    $('#player').removeClass("hidden");
+                    $('#player').addClass("block");
+
+                    $('#div_titulo').html("Dedo-duro eu?");
+                    $('#div_mensagem').html("Quem faz uma denúncia de boa-fé sobre algo de errado a que teve conhecimento, não pode ser rotulado como dedo-duro. Denunciar é mais que uma obrigação legal, é um dever moral!");
+
+                    $('#div_info_play').removeClass("hidden");
+                    $('#div_info_play').addClass("block");
+                    
+                    $('#monitor_mensagem').addClass("hidden");
+                    $('#monitor_mensagem').removeClass("block");
+
+                    $('#img_mao').removeClass("animate-pulse");
+
+                    if (estagio === 0) {
+                        estagio = 1;
+                    }
+                }
+                else if ((opcao === 2 && estagio >= 1 && viuVideo) || (opcao === 2 && liberado)) {
+                    $('#img_reuniao').attr("src", "../imagens/reuniao_ativo.png");
+                    $('#div-info').removeClass("invisible");
+                    $('#img_apresentacao').attr("src", "../imagens/reuniao_ativo.png");
+
+                    $('#player').addClass("hidden");
+                    $('#player').removeClass("block");
+
+                    $('#div_titulo').html("Lealdade ao (s) envolvido (s) e/ou a equipe.");
+                    $('#div_mensagem').html("A dúvida pode surgir dependendo da pessoa que estiver envolvida com a conduta inadequada.");
+
+                    $('#div_info_play').addClass("hidden");
+                    $('#div_info_play').removeClass("block");
+
+                    $('#monitor_mensagem').removeClass("hidden");
+                    $('#monitor_mensagem').addClass("block");
+                    $('#monitor_mensagem').html("<div class='text-[11px] md:text-[16px] p-3 h-[152px] md:h-[254px] overflow-auto'>A dúvida pode surgir ao levarmos em conta, por exemplo, o relacionamento de muitos anos que estabelecemos com a pessoa praticante da conduta inadequada. Pensamentos tais como: \"somos bons amigos\", \"sempre nos demos bem\" ou \"essa pessoa foi quem me ajudou a crescer na empresa\" são comuns e podem te impedir de denunciar já que tal pessoa pode ser prejudicada e você sente que lhe deve lealdade.<br/><br/><p><b>Partindo do princípio de que todos sejamos éticos supõem-se, então, que devemos ser leais aos nossos princípios. Ao optar por denunciar, você não estará prejudicando ninguém. Pois, quem comete o desvio de conduta é que está prejudicando a si mesmo, com o agravante de poder, também, arrastar com ele (a) outras pessoas, incluindo você.<b/></p></div>");
+
+                    $('#img_reuniao').removeClass("animate-pulse");
+
+                    if (estagio === 1) {
+                        $('#img_pessoas').addClass("animate-pulse");
+
+                        estagio = 2;
+                    }
+                } 
+                else if ((opcao === 3 && estagio >= 2 && viuVideo) || (opcao === 3 && liberado)) {
+                    $('#img_pessoas').attr("src", "../imagens/pessoas_ativo.png");
+                    $('#div-info').removeClass("invisible");
+                    $('#img_apresentacao').attr("src", "../imagens/pessoas_ativo.png");
+
+                    $('#player').addClass("hidden");
+                    $('#player').removeClass("block");
+
+                    $('#div_titulo').html("Laços interpessoais.");
+                    $('#div_mensagem').html("A dúvida, também, pode surgir quando a pessoa envolvida na conduta inadequada for aquela com quem você estabelece uma relação para além do ambiente de trabalho.");
+
+                    $('#div_info_play').addClass("hidden");
+                    $('#div_info_play').removeClass("block");
+
+                    $('#monitor_mensagem').removeClass("hidden");
+                    $('#monitor_mensagem').addClass("block");
+                    $('#monitor_mensagem').html("<div class='text-[11px] md:text-[16px] p-3 h-[152px] md:h-[254px] overflow-auto'>Semelhantemente ao caso anterior, a dúvida pode aumentar se a pessoa praticante de uma conduta inadequada for, por exemplo, um grande amigo (a) com quem você compartilha outros vínculos, tais como a rede familiar de ambos. Deste modo, você é levado a pensar que o impacto da suposta denúncia pode trazer consequências para além do ambiente de trabalho.<br/><br/><p><b>Nesse caso, registrar uma denúncia será uma ação difícil, mas ela deve ser realizada.  Lembre-se sempre do seu compromisso com a ética e de que muito mais que um dever legal, denunciar, independentemente de quem esteja envolvido, é um dever moral!</b></p></div>");
+
+                    $('#img_pessoas').removeClass("animate-pulse");
+
+                    if (estagio === 2) {
+                        $('#img_desfazer').addClass("animate-pulse");
+
+                        estagio = 3;
+                    }
+                }
+                else if ((opcao === 4 && estagio >= 3 && viuVideo) || (opcao === 4 && liberado)) {
+                    $('#img_desfazer').attr("src", "../imagens/desfazer_ativo.png");
+                    $('#div-info').removeClass("invisible");
+                    $('#img_apresentacao').attr("src", "../imagens/desfazer_ativo.png");
+
+                    $('#player').addClass("hidden");
+                    $('#player').removeClass("block");
+
+                    $('#div_titulo').html("Medo de represália.");
+                    $('#div_mensagem').html('Muitas vezes, por desconhecimento do funcionamento do Canal, surge o seguinte pensamento: "Para que vou denunciar?" e ainda, "Se descobrirem que fui eu quem fez a denúncia, acabo prejudicando a mim mesmo, já que a corda sempre arrebenta do lado mais fraco".');
+
+                    $('#div_info_play').addClass("hidden");
+                    $('#div_info_play').removeClass("block");
+
+                    $('#monitor_mensagem').removeClass("hidden");
+                    $('#monitor_mensagem').addClass("block");
+                    $('#monitor_mensagem').html("<div class='text-[11px] md:text-[16px] p-3 h-[152px] md:h-[254px] overflow-auto'>O receio de sofrer algum tipo de represália é natural e compreensivo. Por essa razão, é preciso conhecer bem o funcionamento do Canal, bem como as garantias existentes que asseguram àquele(a) que registrar uma denúncia de boa-fé de que não sofrerá nenhum tipo de represália, mesmo que a denúncia se revele improcedente ao final das averiguações.<br/><br/><p><b>Mais à frente, você irá conhecer e compreender quais são as garantias que um Canal independente, como este, disponibilizado pela organização, pode oferecer.</b></p></div>");
+
+                    $('#img_desfazer').removeClass("animate-pulse");
+
+                    if (estagio === 3) {
+                        $('#img_denuncia').addClass("animate-pulse");
+                        
+                        estagio = 4;
+                    }
+                }
+                else if ((opcao === 5 && estagio >= 4 && viuVideo) || (opcao === 5 && liberado)) {
+                    $('#img_denuncia').attr("src", "../imagens/denuncia_ativo.png");
+                    $('#div-info').removeClass("invisible");
+                    $('#img_apresentacao').attr("src", "../imagens/denuncia_ativo.png");
+
+                    $('#player').addClass("hidden");
+                    $('#player').removeClass("block");
+
+                    $('#div_titulo').html("Denunciar não é algo errado e perigoso?");
+                    $('#div_mensagem').html('É um dever individual levar ao conhecimento dos responsáveis pela gestão da ética na organização, uma situação concreta ou uma desconfiança de que houve uma conduta que não esteja alinhada com os valores da instituição, leis ou regulamentos em vigor.');
+
+                    $('#div_info_play').addClass("hidden");
+                    $('#div_info_play').removeClass("block");
+
+                    $('#monitor_mensagem').removeClass("hidden");
+                    $('#monitor_mensagem').addClass("block");
+                    $('#monitor_mensagem').html("<div class='text-[11px] md:text-[16px] p-3 h-[152px] md:h-[254px] overflow-auto'><div class='text-center font-bold text-[13px] md:text-[19px] mb-5'>Mais do que um dever legal, é um dever moral!</div>O Código de Ética e Conduta, que faz parte do contrato de trabalho, estabelece que, ao ter conhecimento sobre uma ação ilícita, é dever do colaborador denunciar.<br/><br/><p><b>Assim, como no exemplo do cinto de segurança, o medo da medida disciplinar não deve ser a razão para denunciar e sim a compreensão de que, mais que um dever legal, é um dever moral tomar esta atitude.</b></p></div>");
+
+                    $('#seguinte').removeClass("invisible");
+
+                    $('#img_denuncia').removeClass("animate-pulse");
+                    
+                    estagio = 5;
+                    liberado = true;
+                }
+            }
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    videoId: '8JW-lxJXxk4',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlay() {
+                if (player)
+                    player.playVideo();
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    stopVideo();
+                    done = true;
+                }
+                else if (event.data === 0) {
+                    $('#img_reuniao').addClass("animate-pulse");
+                    viuVideo = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+    </body>
+</html>

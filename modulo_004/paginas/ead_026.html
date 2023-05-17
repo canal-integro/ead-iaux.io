@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>EAD IAUX</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script src="../js/configurando.js"></script>
+
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-firstPage bg-no-repeat bg-cover">
+        <div id="container">
+            <div id="body" class="flex w-full flex-col md:flex-row">
+
+                <div class="flex justify-center flex-col w-full md:w-[300px] p-8 border-r border-r-separacao h-full">
+                    <div class="text-padrao text-[20px] lg:text-[20px] xl:text-[30px] font-bold">4. Como deve ser uma  denuncia?</div>
+                    <div class="text-padrao mt-10 text-[13px] lg:text-[13px] xl:text-[15px]">Percorra o caminho para conhecer os detalhes necessários no registro de uma denúncia a fim de que ela possua uma consistência suficiente para a adequada apuração dos fatos.</div>
+                    <div class="text-padrao mt-5 text-[13px] lg:text-[13px] xl:text-[15px] font-bold">Clique sobre cada um dos ícones ao lado.</div>
+                </div>
+
+                <div class="flex flex-col w-full items-center">
+                    <div class="w-full h-[200px] md:h-[300px] bg-montanha bg-no-repeat bg-cover">
+                        <div class="flex flex-row justify-between mr-[10px] ml-[10px] md:mr-[40px] md:ml-[40px]">
+                            <img id="opcao_1" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[140px] md:mt-[180px] lg:mt-[220px] cursor-pointer animate-pulse" onclick="leitura(1)">
+                            <img id="opcao_2" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[100px] md:mt-[200px] lg:mt-[230px]" onclick="leitura(2)">
+                            <img id="opcao_3" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[150px] md:mt-[140px] lg:mt-[180px]" onclick="leitura(3)">
+                            <img id="opcao_4" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[100px] md:mt-[160px] lg:mt-[210px]" onclick="leitura(4)">
+                            <img id="opcao_5" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[130px] md:mt-[120px] lg:mt-[160px]" onclick="leitura(5)">
+                            <img id="opcao_6" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[70px] md:mt-[150px] lg:mt-[210px]" onclick="leitura(6)">
+                            <img id="opcao_7" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[140px] md:mt-[70px] lg:mt-[110px]" onclick="leitura(7)">
+                            <img id="opcao_8" src="../imagens/icone_inativo.png" class="w-[28px] h-[43px] mt-[55px] md:mt-[15px] lg:mt-[15px]" onclick="leitura(8)">                            
+                        </div>
+                    </div>
+
+                    <div id="texto" class="flex flex-col md:flex-row bg-white mt-5 rounded p-5 drop-shadow-md items-center w-11/12 invisible">
+                        <img id="mensagem_imagem" src="../imagens/detetive.png" class="w-24 h-24 mr-0 md:mr-3">
+
+                        <div class="flex flex-col">
+                            <div id="mensagem_titulo" class="font-bold text-padrao text-[15px] md:text-[20px]">
+                                Desconfiança?
+                            </div>
+                            <div id="mensagem_texto" class="text-padrao text-[15px] md:text-[20px]">
+                                Se uma organização está desconfiada de que alguém tem comportamentos que não estão alinhados com o seu Código de Conduta ou com leis e regulamentos em vigor, ela deve procurar mecanismos para confirmar ou não estas atitudes, como, por exemplo, uma auditoria. Implementar um Canal para toda a instituição em razão de desconfiança, <b>não</b> é uma razão adequada até mesmo em razão dos custos que isto implica.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" pb-[120px] md:p-[130px]"></div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <div class="flex items-center justify-between w-full h-full p-3">
+                    <img src="../imagens/iaux_logo_grande.png" class="w-[15%] md:w-[7%]">
+                    <div class="flex flex-row items-center">
+                        <img src="../imagens/icone_casa.png" class="w-7 md:w-10 mr-2 cursor-pointer" onclick="inicio()">
+                        <div class="text-padrao text-[9px] font-bold md:text-[14px] mr-2">Canal de Denúncias | Treinamento online</div>
+                        <img src="../imagens/voltar_transparente.png" class="w-7 md:w-10 cursor-pointer" onclick="anterior()">
+                        <img id="seguinte" src="../imagens/seguinte_transparente.png" class="w-7 md:w-10 invisible animate-pulse cursor-pointer" onclick="proximo()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var estagio = 0;
+            var liberado = false;
+
+            const inicio = () => {
+                document.location.href = 'index.html';
+            }
+
+            const anterior = () => {
+                document.location.href = 'ead_025.html';
+            }
+
+            const proximo = () => {
+                document.location.href = 'ead_027.html';
+            }
+
+            const leitura = (opcao) => {
+                if ((opcao === 1 && estagio >= 0) || (opcao === 1 && liberado)) {
+                    $('#opcao_1').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_1').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/detalhe_maximo.png");
+                    $('#mensagem_titulo').html("Detalhe o máximo possível");
+                    $('#mensagem_texto').html("Para que o grupo responsável pela análise da denúncia na empresa tenha todas as informações necessárias para realizar uma apuração técnica, forneça informações suficientemente detalhadas sobre os fatos a relatar. Quanto mais informações e, quando possuir, apresentar evidências anexadas à denúncia, mais assertiva será a análise.");
+
+                    if (estagio === 0) {
+                        $('#opcao_2').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 1;
+                    }
+                }
+                else if ((opcao === 2 && estagio >= 1) || (opcao === 2 && liberado)) {
+                    $('#opcao_2').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_2').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/referencia.png");
+                    $('#mensagem_titulo').html("Dê referências");
+                    $('#mensagem_texto').html("Informe, se possível, o local exato, o horário e em que circunstâncias os fatos aconteceram, como, por exemplo: se foi durante uma reunião de equipe ou com um cliente/fornecedor, por meio de uma mensagem escrita ou falada, no uso de um sistema, na execução de um procedimento, se houve testemunhas ou alguma forma de comprovar o que está sendo denunciado, etc.<br/><br/>Oferecer referências permitirá que o grupo responsável pela análise da denúncia busque, objetivamente, os meios de comprovação dos fatos relatados na denúncia.");
+
+                    if (estagio === 1) {
+                        $('#opcao_3').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 2;
+                    }
+                } 
+                else if ((opcao === 3 && estagio >= 2) || (opcao === 3 && liberado)) {
+                    $('#opcao_3').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_3').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/citar_nomes.png");
+                    $('#mensagem_titulo').html("Cuidado ao citar nomes");
+                    $('#mensagem_texto').html("Ao registrar uma denúncia, é necessário indicar as eventuais pessoas envolvidas nos fatos que você está relatando. Quando for o caso, ao mencionar os nomes como, por exemplo, das vitimas, testemunhas, gestores, outros envolvidos e os autores das condutas inadequadas, é de extrema importância que se informe o nome e sobrenome destas pessoas. Se não souber, informe o cargo, a área em que atua ou outras características que possam identificar a pessoa, eliminando o risco de se cometer algum erro e/ou confusão.<br/><br/>Este cuidado é extremamente necessário para que se possa averiguar assertivamente as condutas denunciadas e quem estiver envolvido nos fatos narrados.");
+
+                    if (estagio === 2) {
+                        $('#opcao_4').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 3;
+                    }
+                }
+                else if ((opcao === 4 && estagio >= 3) || (opcao === 4 && liberado)) {
+                    $('#opcao_4').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_4').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/fatos.png");
+                    $('#mensagem_titulo').html("Se atenha aos fatos");
+                    $('#mensagem_texto').html("Para que o grupo responsável pela análise da denúncia na empresa possa ter maior foco no desvio de conduta que você está denunciando, procure se ater aos fatos que você acredita que configuram tal desvio. Acrescentar situações que não contribuam ou não estejam relacionadas aos fatos denunciados pode ocasionar perda de tempo na análise e na apuração.");
+
+                    if (estagio === 3) {
+                        $('#opcao_5').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 4;
+                    }
+                }
+                else if ((opcao === 5 && estagio >= 4) || (opcao === 5 && liberado)) {
+                    $('#opcao_5').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_5').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/um_registro.png");
+                    $('#mensagem_titulo').html("Um exemplo de como <span style='text-decoration: underline;'><b>NÃO</b></span> fazer um registro.");
+                    $('#mensagem_texto').html("<br/><span class='text-titulo'>NATUREZA: “Assédio moral”<br/>Descrição:</span><br/>Supervisor da área faz ameaças constantes coibindo a equipe.<br/><br/><span class='text-titulo'>Sugestão para resolver o problema</span><br/>Substituição<br/><br/>Registros assim não trazem as informações necessárias para uma concreta averiguação dos fatos. Não dizem quem é o autor da conduta, que tipo de ameaças fez ou faz, qual a equipe ameaçada, quando a ameaça foi feita e nem descreve uma ocasião específica em que a suposta ameaça aconteceu.");
+
+                    if (estagio === 4) {
+                        $('#opcao_6').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 5;
+                    }
+                }
+                else if ((opcao === 6 && estagio >= 5) || (opcao === 6 && liberado)) {
+                    $('#opcao_6').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_6').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/deve_ser_registro.png");
+                    $('#mensagem_titulo').html("Um <span style='text-decoration: underline;'>exemplo</span> de COMO FAZER um registro.");
+                    $('#mensagem_texto').html("<br/><span class='text-titulo'>NATUREZA: “Assédio moral”<br/>Descrição:</span><br/>Durante a última reunião da equipe, o gestor “Fulano de Tal” nos fez ameaças dizendo que quem não estiver satisfeito com a forma como ele trabalha que peça as contas antes que ele mesmo mande embora. Em outra ocasião, se dirigiu ao colega “Beltrano de Oliveira” dizendo que ele não tinha competência para executar uma atividade, constrangendo a todos. Esse tipo de situação já ocorreu várias vezes e toda a equipe está desmotivada, com medo e alguns até mesmo ficaram doentes. O gestor da área XYZ, Sr. Ciclano da Silva, já presenciou um episódio como esse, mas acredito que não tenha feito nada, talvez, por também, ter medo de se envolver.<br/><br/><span class='text-titulo'>Sugestão para resolver o problema</span><br/>Façam uma pesquisa com a equipe para avaliar o nível de satisfação. Também verifiquem que vários funcionários apresentaram atestado médico no ultimo mês. Este gestor precisa ser treinado ou substituído, pois queremos trabalhar em condições adequadas para desempenhar nossas atividades.");
+
+                    if (estagio === 5) {
+                        $('#opcao_7').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 6;
+                    }
+                }
+                else if ((opcao === 7 && estagio >= 6) || (opcao === 7 && liberado)) {
+                    $('#opcao_7').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_7').removeClass("animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').removeClass("invisible");
+                    $('#mensagem_imagem').attr("src", "../imagens/acompanhe.png");
+                    $('#mensagem_titulo').html("Acompanhe!");
+                    $('#mensagem_texto').html("Ao registrar uma denúncia no Canal, seja pela internet ou pelo 0800 (se disponibilizado), você receberá um número de protocolo para que possa acompanhar o andamento da análise da sua denúncia e, caso seja necessário, fornecer informações adicionais. É de extrema importância que você guarde o número deste protocolo em local seguro. Pois, em caso de perda, não será possível recuperá-lo, mesmo que tenha se identificado, fazendo com que um novo registro seja realizado.<br/><br/>Importante que você consulte regularmente o protocolo emitido, pois o grupo responsável pela análise da denúncia na empresa pode ter dúvidas e necessitar de maiores esclarecimentos, sem os quais pode não ser possível prosseguir com as apurações e, consequentemente, a resolução da situação.<br/><br/>Portanto <b>acompanhe!</b>");
+
+                    if (estagio === 6) {
+                        $('#opcao_8').addClass("cursor-pointer animate-pulse");
+
+                        estagio = 7;
+                    }
+                }
+                else if ((opcao === 8 && estagio >= 7) || (opcao === 8 && liberado)) {
+                    $('#opcao_8').attr('src', '../imagens/icone_ativo.png');
+                    $('#opcao_8').removeClass("animate-pulse");
+                    $('#opcao_9').addClass("cursor-pointer animate-pulse");
+
+                    $('#texto').removeClass("invisible");
+
+                    $('#mensagem_imagem').addClass("invisible");
+                    $('#mensagem_titulo').html("Como registrar uma denúncia e acompanhar o andamento");
+                    $('#mensagem_texto').html("<div class='flex flex-col mb-6'>Você pode registrar uma denúncia acessando a página do Canal na internet no endereço fornecido pela sua instituição ou pelo telefone 0800, caso o atendimento por este meio tenha sido disponibilizado.<br/><br/>Para fazer o registro e depois acompanha-lo, você deverá clicar os botões respectivos como os abaixo, clique e veja os exemplos.</div><div class='flex justify-center'><button class='bg-selecionado p-3 mr-4' onclick='selecionado(0)'>Registrar Denúncia</button><button class='bg-selecionado p-3' onclick='selecionado(1)'>Acompanhe seu Relato</button></div>");
+
+                    $('#seguinte').removeClass("invisible");
+
+                    estagio = 9;
+                    liberado = true;
+                }
+            }
+
+            const selecionado = (opcao) => {
+                if (opcao === 0) {
+                    document.location.href = 'ead_027.html';
+                }
+                else if (opcao === 1) {
+                    document.location.href = 'ead_028.html';
+                }
+            }
+        </script>
+    </body>
+</html>
